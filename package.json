@@ -3,13 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
+    "@date-io/date-fns": "^2.17.0",
+    "@date-io/moment": "^2.17.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.5.0",
+    "@mui/material": "^5.3.0",
+    "@mui/x-date-pickers": "^6.18.4",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.10.7",
+    "firebase": "^10.7.1",
+    "html-webpack-plugin": "^5.5.4",
+    "luxon": "^3.4.4",
+    "moment": "^2.29.4",
+    "randomcolor": "^0.6.2",
     "react": "^18.2.0",
+    "react-awesome-loader": "^2.0.1",
+    "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-router-dom": "^6.21.0",
+    "react-scripts": "^5.0.1",
+    "uuid": "^9.0.1",
+    "web-vitals": "^3.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +51,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

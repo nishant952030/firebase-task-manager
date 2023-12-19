@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { useContext } from 'react';
+import './App.css';
+import EditTodo from './components/EditTodo';
+import Sidebar from './components/Header';
+import Main from './components/Main';
+import Todos from './components/Todos';
+import { redirect } from 'react-router-dom';
+import { TodoContext } from './context';
+import { useNavigate } from 'react-router-dom';
 function App() {
+  const { authorize } = useContext(TodoContext);
+  const navigate = useNavigate();
+  if (!authorize) {
+    navigate('/')
+    return null;
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar/> 
+      <Main/>
     </div>
   );
 }
