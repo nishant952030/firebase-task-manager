@@ -235,7 +235,6 @@
 .projects {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     padding-top: .4rem;
     overflow-x: scroll;
 }
@@ -627,7 +626,7 @@
     font-size: 12px;
     margin-left: .5rem;
     margin-top: -.4rem;
-    color: #706f6f;
+    color: #afafaf;
 }
 
 .line {

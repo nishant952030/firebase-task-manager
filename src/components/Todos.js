@@ -15,7 +15,7 @@ function Todos({setShowEdit}) {
           selectedProject === "Next 7 Days" ?
             <Next7days todo={todos} /> :
             todos.map(todo =>
-              <Todo  setShowEdit={setShowEdit} todo={todo} key={todo.id}/>
+              <Todo setShowEdit={setShowEdit} id={todo.id } todo={todo} key={todo.id}/>
           )
        }
       </div>

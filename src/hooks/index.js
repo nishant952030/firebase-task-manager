@@ -34,16 +34,17 @@ export function useProjects(todos) {
                     id: doc.id,
                     name: doc.data().name,
                     numOfTodos: calculateNumOfTodos(doc.data().name, todos)
+                
                 }));
-                setProjects(data)
-                console.log(data);
-                console.log(projects);
+                setProjects(data);
+              
+                
             });
          
         return () => unsubscribe();
     }, [todos]);
     useEffect(() => {
-        console.log(projects);
+        console.log("use project",projects);
     }, [projects]);
 
     return projects;

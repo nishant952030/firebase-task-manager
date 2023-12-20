@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import '../css/landingpage.css'
+import wheel from '../img/icons8-spinning-circle.gif'
 import {
   getAuth,
   signInWithPopup,
@@ -45,13 +46,14 @@ function LandingPage() {
   const signIn = async (e) => {
     e.preventDefault();
     try {
+      setLoader(true)
       const userCredential = await signInWithPopup(auth, provider);
       setInfo(userCredential);
       navigate('/app');
     } catch (error) {
       console.error(error);
       setInfo({ error: error.message });
-    }
+    } finally{ setLoader(false)}
   };
   const signupWithEmailAndPassword = async (e) => {
     e.preventDefault();
@@ -83,6 +85,7 @@ function LandingPage() {
   const signUp = async (e) => {
     e.preventDefault();
     try {
+      setLoader(true)
       const userCredential = await signInWithPopup(auth, provider);
       setInfo(userCredential);
       navigate('/app');
@@ -90,6 +93,7 @@ function LandingPage() {
       console.error(error);
       setInfo({ error: error.message });
     }
+    finally{setLoader(false)}
   };
   const handleNavbar = () => {
     setSideNAvbar(true)
@@ -172,7 +176,12 @@ function LandingPage() {
             <div className='already-user'><h5>Already an user? <span  onClick={takeToLogin}>Login</span></h5></div>
         </div>
         </div>
-      </div>
+        {loader && < div className='loader'>
+          <div className="spining-wheel">
+            <img src={wheel}></img>
+          </div>
+        </div>}
+        </div>
     </div >
   );
 }

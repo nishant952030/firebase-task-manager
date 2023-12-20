@@ -147,7 +147,7 @@ function Login() {
                             <label>Email</label>
                             <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email...' />
                         </div>
-                        <div className='password'>
+          w              <div className='password'>
                             <label>Password</label>
                             <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Pass...' />
                         </div>

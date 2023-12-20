@@ -1,9 +1,27 @@
+import { doc, collection, deleteDoc, getFirestore } from 'firebase/firestore'
 import randomColor from 'randomcolor'
 import React, { useState } from 'react'
 import { ArrowClockwise, CheckCircleFill, Circle, Trash } from 'react-bootstrap-icons'
-function Todo({ handleDelete, todo, setShowEdit }) {
+import { firebase } from './firebase'
+import { de } from 'date-fns/locale'
+function Todo({ todo, setShowEdit, }) {
     const [hover, setHover] = useState(false)
     const [isChecked, setIsChecked] = useState(todo.checked)
+    
+    const handleDelete = async (todo) => {
+      const firestore = getFirestore(firebase);
+        const todocollection= doc(firestore, 'todos',todo.id);
+
+        try {
+            await deleteDoc(todocollection);
+            console.log(`Document with ID ${todo.id} deleted successfully.`);
+        } catch (error) {
+            console.error("Error deleting document:", error);
+        } finally {
+            console.log("Deletion process completed.");
+        }
+    }
+
     return (
         <div className='todo-container'>
             <div className='todo-container-2 ' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
@@ -27,7 +45,7 @@ function Todo({ handleDelete, todo, setShowEdit }) {
                     <div className='add-to-next-day'>
                         {isChecked && <span><ArrowClockwise onClick={() => setIsChecked(false)} className='arrow' /></span>}
                     </div>
-                    {hover || isChecked ? <span><Trash onClick={() => { handleDelete(todo.id); console.log(todo) }} className='trash' /></span> : ""}
+                    {hover || isChecked ? <span><Trash onClick={() => { handleDelete(todo); console.log(todo) }} className='trash' /></span> : ""}
                 </div>
             </div>
         </div>
