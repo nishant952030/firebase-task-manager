@@ -103,6 +103,10 @@ function Login() {
 
     return (
         <div className='main-landing'>
+            <div className='rotat'>
+                <svg className='svg' xmlns="http://www.w3.org/2000/svg" width="1920" height="878" viewBox="0 0 1920 878" fill="none">
+                    <path d="M-156.261 27L1929.5 -303.352L2064.15 546.794L-21.6108 877.145L-156.261 27Z" fill="#099DFF" />
+                </svg></div>
             <div id='home'>
                 <div className='navbar'>
                     <div className='logo'>
@@ -133,7 +137,7 @@ function Login() {
                     </div>}
 
 
-                <div className='rotated-div'></div>
+                
                 <div className='heading-login'>
                     <div className='landing-heading'>
                         <p>From Chaos  to Clarity:  TaskFlow Simplifies  Your To-Dos</p>
@@ -147,7 +151,7 @@ function Login() {
                             <label>Email</label>
                             <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email...' />
                         </div>
-          w              <div className='password'>
+                        <div className='password'>
                             <label>Password</label>
                             <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Pass...' />
                         </div>
@@ -171,10 +175,10 @@ function Login() {
                 </div>
             </div>
             {loader && < div className='loader'>
-            <div className="spining-wheel">
-                <img src={wheel}></img>
-            </div>
-        </div>}
+                <div className="spining-wheel">
+                    <img src={wheel}></img>
+                </div>
+            </div>}
         </div >
     );
 }
