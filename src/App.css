@@ -509,11 +509,11 @@ html{
 /*           editandadd               */
 
 .editnew {
-    position: relative;
-    top: -253px;
-    left: -134px;
-    width: 130vw;
-    height: 130vh;
+    position: absolute;
+top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
     background-color: #00000080;
     z-index: 10000;
 }
@@ -521,12 +521,14 @@ html{
 .container-editnew {
     width: 20rem;
     height: 12rem;
-    background-color: #ffffffb7;
+    background-color: #f1f1f1e1;
     position: relative;
     margin: 0 auto;
     top: 25rem;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
 
 }
 
