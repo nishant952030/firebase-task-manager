@@ -5,10 +5,12 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-html{
+
+html {
     overflow: hidden;
     -moz-overflow-style: hidden;
 }
+
 .App {
     display: flex;
     width: 100vw;
@@ -65,7 +67,8 @@ html{
     margin-top: .3rem;
 
 }
-.popup-content{
+
+.popup-content {
     position: relative;
     left: -56px;
     top: 425px;
@@ -74,7 +77,8 @@ html{
     height: 100vh;
     z-index: 10;
 }
-.popup{
+
+.popup {
     width: 300px;
     height: 120px;
     position: absolute;
@@ -82,16 +86,17 @@ html{
     left: 40vw;
     z-index: 100;
     background-color: hsla(0, 0%, 93%, 0.151);
-    backdrop-filter:blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     overflow: hidden;
-    
+
 }
-.popup button{
+
+.popup button {
     width: 50%;
     border: none;
     height: 40px;
-    margin-top:20px;
+    margin-top: 20px;
     color: #444444;
     font-weight: 400;
     font-size: 1.2rem;
@@ -99,18 +104,20 @@ html{
     transition: all 300ms ease-in-out;
 }
 
-.popup button:hover{
+.popup button:hover {
     opacity: .8;
 }
-.popup button:nth-child(2)
-{
+
+.popup button:nth-child(2) {
     background-color: #099dff;
 }
-.popup p{
+
+.popup p {
     color: white;
-    font-size:1.2rem;
-    margin:1rem 1rem 0 1rem;
+    font-size: 1.2rem;
+    margin: 1rem 1rem 0 1rem;
 }
+
 .logo img {
     width: 3rem;
     height: 3rem;
@@ -184,7 +191,7 @@ html{
     padding: 1rem;
     transition: top 1000ms ease-in-out;
     border-radius: 10px;
-    
+
 
 }
 
@@ -332,7 +339,96 @@ html{
         padding: 0 2rem;
     }
 } */
+ .todos {
+     position: absolute;
+     width: 25.1rem;
+     height: 80%;
+     background-color: #eeeeee1c;
+     top: 40px;
+     left: 3vw;
+     padding: 1rem;
+     border-radius: 10px;
+     backdrop-filter: blur(30px);
 
+
+
+ }
+
+ .selected-project {
+     font-size: large;
+     font-weight: bold;
+     border-bottom: 2px solid grey;
+     padding-bottom: .5rem;
+ }
+
+ .radio-text {
+     display: flex;
+     height: 2.5rem;
+     align-items: center;
+ }
+
+ .radio-text p {
+     margin-left: .5rem;
+     color: #beb9b9;
+ }
+
+ .todo-container-2 {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+ }
+
+ .todo-time-date-grey {
+     opacity: .7;
+ }
+
+ .circle {
+     cursor: pointer;
+ }
+
+ .time-and-project {
+     font-size: 12px;
+     margin-left: .5rem;
+     margin-top: -.4rem;
+     color: #afafaf;
+ }
+
+ .line {
+     height: 1px;
+     background-color: #706f6f;
+     position: relative;
+     left: .5rem;
+     top: -26px;
+     width: 0%;
+     transition: width 300ms ease-in-out;
+ }
+
+ .line-through {
+     width: 100%;
+ }
+
+ .add-to-next-day {
+     margin-right: .7rem
+ }
+
+ .todo-delete {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .arrow,
+ .trash {
+     cursor: pointer;
+     transition: all 300ms ease-in-out;
+     border-radius: 50%;
+
+ }
+
+ .arrow:hover,
+ .trash:hover {
+     filter: drop-shadow(13px 0 rgba(0, 0, 0, 0.212));
+ }
 @media screen and (max-width:576px) {
     .App {
         padding: 0;
@@ -357,6 +453,13 @@ html{
     .cancel {
         top: -387px;
         left: 289.4px;
+    }
+}
+
+@media (max-width:424px) {
+    .todos {
+        
+        width: 94%;
     }
 }
 
@@ -472,10 +575,12 @@ html{
 
 
 }
+
 .project-button {
     display: flex;
 
 }
+
 .edit-delte,
 .cross {
     margin-right: .5rem;
@@ -486,10 +591,12 @@ html{
     align-items: center;
     cursor: pointer;
 }
+
 .edit-delte:hover {
     transition: all 300ms ease-in-out;
     background-color: rgb(217, 217, 218);
 }
+
 .cross:hover {
     transition: all 300ms ease-in-out;
     background-color: rgb(219, 217, 217);
@@ -510,7 +617,7 @@ html{
 
 .editnew {
     position: absolute;
-top: 0px;
+    top: 0px;
     left: 0px;
     width: 100vw;
     height: 100vh;
@@ -579,93 +686,3 @@ top: 0px;
 
 /*  todos csssssssssssss */
 
-.todos {
-    position: absolute;
-    width: 25.1rem;
-    height: 80%;
-    background-color: #eeeeee1c;
-    top: 40px;
-    left: 3vw;
-    padding: 1rem;
-    border-radius: 10px;
-    backdrop-filter: blur(30px);
-
-
-
-}
-
-.selected-project {
-    font-size: large;
-    font-weight: bold;
-    border-bottom: 2px solid grey;
-    padding-bottom: .5rem;
-}
-
-.radio-text {
-    display: flex;
-    height: 2.5rem;
-    align-items: center;
-}
-
-.radio-text p {
-    margin-left: .5rem;
-    color: #beb9b9;
-}
-
-.todo-container-2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.todo-time-date-grey {
-    opacity: .7;
-}
-
-.circle {
-    cursor: pointer;
-}
-
-.time-and-project {
-    font-size: 12px;
-    margin-left: .5rem;
-    margin-top: -.4rem;
-    color: #afafaf;
-}
-
-.line {
-    height: 1px;
-    background-color: #706f6f;
-    position: relative;
-    left: .5rem;
-    top: -26px;
-    width: 0%;
-    transition: width 300ms ease-in-out;
-}
-
-.line-through {
-    width: 100%;
-}
-
-.add-to-next-day {
-    margin-right: .7rem
-}
-
-.todo-delete {
-    display: flex;
-    justify-content: space-between;
-}
-
-.arrow,
-.trash {
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
-    border-radius: 50%;
-
-}
-
-.arrow:hover,
-.trash:hover {
-    filter: drop-shadow(13px 0 rgba(0, 0, 0, 0.212));
-}
